@@ -1,4 +1,4 @@
-# Benchmarking Network Embedding Models for Link Prediction: Are We Making Progress?
+# Benchmarking Network Representation Lerning Models
 
 This repository contains the instructions and materials necessary for reproducing the experiments presented in the 
 paper: *Benchmarking Network Embedding Models for Link Prediction: Are We Making Progress?*
