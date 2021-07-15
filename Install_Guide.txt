@@ -1,0 +1,151 @@
+In the system were this guide was made we have:
+	/usr/bin/python -> python2.7
+	/usr/bin/python3 -> python3.6.9
+Simply calling virtualenv venv would result in a virtualenv with Python3.8 installed
+
+
+Arope
+---------------------------------
+Create requirements.txt containing: networkx, convert
+$ virtualenv -p /usr/bin/python venv
+$ venv/bin/pip install -r requirements.txt
+$ cd python
+$ ../venv/bin/python main.py
+
+
+CNE
+---------------------------------
+$ virtualenv -p /usr/bin/python venv
+$ venv/bin/pip install -r req.txt
+
+
+Deepwalk
+---------------------------------
+$ sudo apt install python-dev
+$ virtualenv -p /usr/bin/python venv
+$ venv/bin/pip install -r requirements.txt
+$ venv/bin/python setup.py install
+Ensure that $LD_LIBRARY_PATH points to nothing
+
+GEM
+---------------------------------
+$ sudo apt install python-tk
+$ virtualenv -p /usr/bin/python venv
+$ venv/bin/pip install matplotlib==2.2.4 theano pyyaml
+$ venv/bin/pip install -r req2.txt
+$ venv/bin/python setup.py install
+
+
+LINE-master
+---------------------------------
+Compile the line code again using:
+$ g++ line.cpp -o line -lpthread -lgsl -lgslcblas
+make sure the following libs are installed:
+  libgsl-dev libgslcblas0
+
+
+Metapath2vec
+---------------------------------
+make
+
+
+M-NMF
+---------------------------------
+Requires py3.5 but dependencies won't work there, use python2.7
+$ virtualenv -p /usr/bin/python venv
+$ venv/bin/pip install -r requirements.txt
+
+
+Node2vec
+---------------------------------
+Remove pkg-resources==0.0.0 from the req list
+$ virtualenv -p /usr/bin/python venv
+$ venv/bin/pip install -r req.txt
+
+
+Node2vec(HS)
+---------------------------------
+Same req.txt as in node2vec
+$ virtualenv -p /usr/bin/python venv
+$ venv/bin/pip install -r req.txt
+
+
+OpenNE
+---------------------------------
+remove pkg-resources==0.0.0 and openne==0.0.0 from the req.txt list
+$ virtualenv -p /usr/bin/python venv
+$ venv/bin/pip install -r req.txt
+$ cd src
+$ ../venv/bin/python setup.py install
+Numpy 14 wil not work properly so install numpy 16 (verion incompatible with tensorflow, but works)
+$ ../venv/bin/pip install numpy==1.16
+
+
+PRUNE
+---------------------------------
+Switch tensorflow-gpu==1.1.0 to tensorflow==1.1.0 in the requirements.txt file
+$ virtualenv -p /usr/bin/python venv
+$ venv/bin/pip install -r requirements.txt
+
+
+Role2vec
+---------------------------------
+The method does not work from inside a virtualenv
+Run from system-wide python with following requirements
+$ pip install numpy, scipy, gensm, texttable, networkx===1.11
+
+
+Struc2vec
+---------------------------------
+remove pkg-resources==0.0.0 from req.txt
+$ virtualenv -p /usr/bin/python venv
+
+
+Verse
+---------------------------------
+$ virtualenv -p /usr/bin/python venv
+$ venv/bin/pip install numpy scipy click argparse networkx==1.11
+
+
+WYS
+---------------------------------
+Requirement torch 1.0.0 does't exist in python 3.6, so remove version from requirements file
+$ virtualenv -p /usr/bin/python3 venv
+$ venv/bin/pip install -r requirements.txt
+Ensure that input and and output folder exist so the results can be stored there
+
+
+NetMF
+---------------------------------
+Theano throws errors on python 3.6 so we use python 2.7 instead
+$ virtualenv -p /usr/bin/python2.7 venv
+Create requirements.txt containing: numpy, scipy, sklearn, theano, networkx
+$ venv/bin/pip install -r requirements.txt
+Use the provided main_NetMF.py file to run the method 
+
+
+FREDE
+---------------------------------
+Main function runs the method and PPR matrix computation
+$ virtualenv -p /usr/bin/python3.8 venv
+Create requirements.txt containing: numpy, scipy, click, sklearn, tqdm, networkx
+$ venv/bin/pip install -r requirements.txt
+
+To get multithread working (does not change method performance):
+$ venv/bin/pip install mkl dlib
+To install dlib CMake is required, install it from ubuntu software center
+Check that libmkl_rt.so or libmkl_rt.so.1 are under /venv/lib/
+If not, get dlib from GitHub, install using /venv/bin/python setup.py install
+Now libmkl_rt.so or libmkl_rt.so.1 should be under /venv/lib/
+Add the full path to libmkl_rt.so or libmkl_rt.so.1 to line 53 in the main.py code
+e.g. mkl_rt = ctypes.CDLL('/home/dru/Desktop/EvalNE-dev/code/methods/FREDE/venv/lib/libmkl_rt.so.1')
+For some reason adding /venv/lib/ to the LD_LIBRARY_PATH doesn't work...
+
+
+
+
+
+
+
+
+
